@@ -1,0 +1,23 @@
+Party; Colour
+Conservative; #0087DC 
+Conservative shade; #C2E6FC
+Labour; #E4003B 
+Labour shade; #FCC2D2 
+Liberal Democrats; #FAA61A 
+Liberal Democrats shade; #FCE6C2 
+SNP; #FDF38E 
+SNP shade; #FCF8C2 
+UKIP; #70147A 
+UKIP shade; #F7C2FC 
+Brexit Party; #12B6CF 
+Brexit Party shade; #C2F5FC 
+Green Party; #528D6B 
+Green Party shade; #C2FCDB 
+Plaid Cymru; #005B54 
+Plaid Cymru shade; #C2FCF8 
+Other; #7EE628 
+Other shade; #DDFCC2 
+Will not vote; #bb00bb 
+Will not vote shade; #FCC2FC
+
+
