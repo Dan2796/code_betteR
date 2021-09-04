@@ -50,3 +50,18 @@ If you can't think of a useful name, attach _fun at the end as a suffix to make 
 
 For very frequently used functions, such as some in this directory, short acronyms as names for quick use are fine. For example, ns to stand for name_search, since this is used frequently.
 
+## Commenting
+
+In the past I commented extensively, following a convention that seems prevalent among academics who use R (and, for that matter, STATA).
+
+The rationale seems to be that this makes it easier for others to understand the process. But I'm not entirely sure that this is true, because:
+
+1. If you a reader doesn't understand how the function mutate works, you are going to google it, regardless of whether the comment says "recode class into four categories"
+2. Comments encourage readers to skip over code, and therefore to essentially read a methodology section (I coded class into three categories) rather than checking whether that has actually been done in the code - if a reader wants to understand the method then they can look in the paper or into the Appendix. 
+
+So I have since changed my approach to minimal comments. Comments can be used to explain why a process has been performed, ("coded into 3 categories because too few numbers in the higher managerial group"), or to explain why a hack has been taken ("ideally this would be a function but I don't have time to do it for this one robustness check"), or to explain why a function is commented out ("this takes ages to run so only do so if you need the plot redrawn").
+
+Space and appropriate structure, with nice function names, serves the same purpose as excessive commenting whilst being quicker to debug!
+
+
+
