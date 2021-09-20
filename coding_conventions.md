@@ -12,6 +12,18 @@ The principles I am trying to adhere to with these coding conventions are as fol
 
 # Conventions
 
+## Directory structure
+
+There is a trade-off involved when deciding to use short or long files. Long files are unwieldy, code can be hard to find and trace, and accidental dependencies within the file can creep in and make it hard to later delete parts of the file. Short files, by contrast, can take time to navigate and obscure what is actually happening beneath the hood. 
+
+To try and navigate this trade-off, I tend to have a few relatively large files that will perform one "task", such as coding all of the variables in a dataset, but to keep this as small as possible by sourcing various functions to for the coding of each variable. The main file is thus still only a few hundred lines, and the operations are transparent. 
+
+Functions that are even slightly generic are therefore stored in the functions directory, and each function file contains only one function.
+
+Given my structure it is important to have easy file navigation. I use rtags in vim to enable quick jumping around and thereby limit the "opacity" - any unclear functions can be viewed at a keystroke.
+
+An additional method for minimising opacity in the code is to name function files after the function, (so a quick_view function will be stored in the file quick_view.R). This makes it clearer when sourcing a file exactly which object has been created. For non-function files this is sometimes impractical, and in such cases a comment explaining what new objects are produced by the sourced file should be included.
+
 ## Naming 
 
 ### Case
