@@ -24,6 +24,38 @@
   #scale_fill_manual(values = c("black", "white")) 
 
 
+# K fold cross validation
+kfold_split <- function(df,k){
+  sequence <- cut(seq(1,nrow(df)), breaks = k, labels = FALSE)
+  rand <- sample(sequence)
+  split_df <- split(df, rand)
+  return(split_df)
+}
+
+crossvalidate <- function(split_df, test_index, model_fun, formula){
+  trainer_df <- bind_rows(split_df[-test_index])
+  tester_df <- split_df[[test_index]]
+  model_results <- model_fun(formula = formula,
+                             data = trainer_df)
+  diff <- predict(model_results, tester_df) - tester_df$dependentvar
+  return(sqrt(mean(diff^2, na.rm = TRUE)))
+}
+
+kfold_crossvalidate <- function(split_df, model_fun, formula){
+  cross_val_vec <- c()
+  for (i in (1:length(split_df))) {
+    out <- crossvalidate(split_df, i,
+                         model_fun,
+                         formula)
+    cross_val_vec <- c(cross_val_vec, out)
+  }
+  return(cross_val_vec)
+}
+
+kfold_crossvalidate(test_1, 
+                    handle_fun,
+                    list_of_formulas$"formula")
+
 
 
 
